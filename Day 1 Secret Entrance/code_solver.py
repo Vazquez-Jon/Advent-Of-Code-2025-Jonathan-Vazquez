@@ -35,3 +35,9 @@ def main():
         for line in file:
             turns = int(line[1:])
             dir   = line[:1]
+            lockupdates = updateLock(lock, dir, turns)
+            lock = lockupdates[0]
+            code += lockupdates[1]
+    print(code)
+
+main()
