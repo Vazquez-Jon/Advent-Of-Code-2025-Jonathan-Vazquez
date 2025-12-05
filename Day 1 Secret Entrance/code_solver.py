@@ -11,7 +11,7 @@ def posLetter(turnDirection: str) -> bool:
 def updateLock(lock: int, dir: str, turns: int) -> int:
     resets = 0
     if (dir == "R") :
-        lock += turns 
+        lock += turns
     else:
         lock -= turns
 
