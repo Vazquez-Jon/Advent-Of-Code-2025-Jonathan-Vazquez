@@ -1,7 +1,7 @@
 # Jonathan Vazquez
 
 
-filepath = './Input.txt'
+filepath = 'F:\Projects\Advent-Of-Code-2025-Jonathan-Vazquez\Day 1 Secret Entrance\Input.txt'
 
 def posLetter(turnDirection: str) -> bool:
     if (turnDirection == "R"):
