@@ -1,7 +1,7 @@
 # Jonathan Vazquez
 
 
-filepath = 'Day 1 Secret Entrance\TestInput1.txt'
+filepath = 'Day 1 Secret Entrance\Input.txt'
 
 def posLetter(turnDirection: str) -> bool:
     if (turnDirection == "R"):
@@ -21,7 +21,8 @@ def updateLock(lock: int, dir: str, turns: int) -> int:
         lock = 100 - abs(lock)
     elif (lock < -100):
         lock = 100 - (abs(lock) % 100)
-    elif (lock == 0 or lock == 100 or lock == -100):
+    
+    if (lock == 0 or lock == 100 or lock == -100):
         lock = 0
         resets += 1
     
