@@ -33,7 +33,6 @@ def main():
     lock = 50
     with open(filepath, 'r') as file:
         for line in file:
-            print(f'code: {code}  lock: {lock}')
             turns = int(line[1:])
             dir   = line[:1]
             lockupdates = updateLock(lock, dir, turns)
