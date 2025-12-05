@@ -1,7 +1,7 @@
 # Jonathan Vazquez
 
 
-filepath = 'F:\Projects\Advent-Of-Code-2025-Jonathan-Vazquez\Day 1 Secret Entrance\Input.txt'
+filepath = 'Day 1 Secret Entrance\Input.txt'
 
 def posLetter(turnDirection: str) -> bool:
     if (turnDirection == "R"):
@@ -15,29 +15,29 @@ def updateLock(lock: int, dir: str, turns: int) -> int:
     else:
         lock -= turns
 
-    if (lock > 99):
+    if (lock > 100):
         lock = lock % 100
-        resets += 1
     elif (lock < 0):
-        lock = abs(lock)
-    elif (lock < -99):
-        lock = 100 - (abs(lock) - 100)
-        resets += 1 
+        lock = 100 - abs(lock)
+    elif (lock < -100):
+        lock = 100 - (abs(lock) % 100)
+    elif (lock == 0 or lock == 100 or lock == -100):
+        lock = 0
+        resets += 1
     
     return [lock, resets]
 
 def main():
-    print('Hello')
-
     code = 0
     lock = 50
     with open(filepath, 'r') as file:
         for line in file:
+            #print(f'code: {code}  lock: {lock}')
             turns = int(line[1:])
             dir   = line[:1]
             lockupdates = updateLock(lock, dir, turns)
             lock = lockupdates[0]
             code += lockupdates[1]
-    print(code)
+    print(f'code: {code}')
 
 main()
